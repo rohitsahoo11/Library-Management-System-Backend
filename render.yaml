@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: library-backend
+    env: docker
+    buildCommand: ./mvnw clean install
+    startCommand: java -jar target/LibraryManagementSystem-0.0.1-SNAPSHOT.jar
+    envVars:
+      - key: JAVA_HOME
+        value: /opt/render/project/java
+      - key: PORT
+        value: 8080
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://dpg-d3ub4pili9vc73bvg3h0-a:5432/library_db_ftmn
+      - key: SPRING_DATASOURCE_USERNAME
+        value: library_db_ftmn_user
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: DAutL2VJbfiFmuE5SgOJIPwyu1aVj2e5
